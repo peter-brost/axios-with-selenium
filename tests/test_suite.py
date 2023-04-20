@@ -38,3 +38,11 @@ class TheInternetTests(BaseTest):
         self.checkboxes_page.click_checkbox_2()
         self.assertTrue(self.checkboxes_page.get_checkbox_1_status())
         self.assertFalse(self.checkboxes_page.get_checkbox_2_status())
+
+    def test_dropdown_page(self):
+        # TODO - doc string here
+        self.dropdown_page.open(path=self.dropdown_page.path)
+        self.dropdown_page.select_option_1()
+        self.assertEqual(self.dropdown_page.get_selected_option_text(), "Option 1")
+        self.dropdown_page.select_option_2()
+        self.assertEqual(self.dropdown_page.get_selected_option_text(), "Option 2")

@@ -4,6 +4,7 @@ import unittest
 
 from pages.add_remove_elements_page import AddRemoveElementsPage
 from pages.checkboxes_page import CheckBoxesPage
+from pages.dropdown_page import DropdownPage
 from pages.login_page import LoginPage
 from pages.secure_page import SecurePage
 from pages.key_presses_page import KeyPressesPage
@@ -16,6 +17,7 @@ class BaseTest(unittest.TestCase):
         self.driver.implicitly_wait(10)
         self.add_remove_elements_page = AddRemoveElementsPage(self.driver)
         self.checkboxes_page = CheckBoxesPage(self.driver)
+        self.dropdown_page = DropdownPage(self.driver)
         self.key_presses_page = KeyPressesPage(self.driver)
         self.login_page = LoginPage(self.driver)
         self.secure_page = SecurePage(self.driver)
