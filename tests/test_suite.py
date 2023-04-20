@@ -20,3 +20,13 @@ class TheInternetTests(BaseTest):
         character = random.choice(string.ascii_uppercase)
         self.key_presses_page.enter_text(character)
         self.assertEqual(self.key_presses_page.get_result_text(), f"You entered: {character}")
+
+    def test_add_remove_elements_page(self):
+        # TODO - doc string here
+        self.add_remove_elements_page.open(path=self.add_remove_elements_page.path)
+        number = random.randint(1, 5)
+        for i in range(number):
+            self.add_remove_elements_page.click_add_element_button()
+            time.sleep(.25)
+        element_count = self.add_remove_elements_page.get_delete_element_button_count()
+        self.assertEqual(element_count, number)
