@@ -30,3 +30,11 @@ class TheInternetTests(BaseTest):
             time.sleep(.25)
         element_count = self.add_remove_elements_page.get_delete_element_button_count()
         self.assertEqual(element_count, number)
+
+    def test_checkboxes_page(self):
+        # TODO - doc string here
+        self.checkboxes_page.open(path=self.checkboxes_page.path)
+        self.checkboxes_page.click_checkbox_1()
+        self.checkboxes_page.click_checkbox_2()
+        self.assertTrue(self.checkboxes_page.get_checkbox_1_status())
+        self.assertFalse(self.checkboxes_page.get_checkbox_2_status())
