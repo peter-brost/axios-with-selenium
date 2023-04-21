@@ -1,12 +1,7 @@
-from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-
-class LoginPage(BasePage):
-    # TODO - doc string here
-
+class LoginPage:
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
         self.path = "login"
 
@@ -14,8 +9,13 @@ class LoginPage(BasePage):
     username_input_locator = (By.ID, "username")
     password_input_locator = (By.ID, "password")
     login_button_locator = (By.CSS_SELECTOR, "button[type='submit']")
+    logout_button_locator = (By.CSS_SELECTOR, "a.button.secondary.radius")
 
     # Helper methods
+    def open(self, base_url):
+        url = f"{base_url}{self.path}"
+        self.driver.get(url)
+
     def enter_username(self, username):
         self.driver.find_element(*self.username_input_locator).send_keys(username)
 
@@ -29,3 +29,7 @@ class LoginPage(BasePage):
         self.enter_username(username)
         self.enter_password(password)
         self.click_login_button()
+
+    def get_logout_button(self):
+        return self.driver.find_element(*self.logout_button_locator)
+    

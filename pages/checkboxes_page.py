@@ -1,12 +1,7 @@
-from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-
-class CheckBoxesPage(BasePage):
-    # TODO - doc string here
-
+class CheckBoxesPage:
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
         self.path = "checkboxes"
 
@@ -17,6 +12,10 @@ class CheckBoxesPage(BasePage):
     checkbox_2_label_locator = (By.XPATH, "//input[@type='checkbox'][2]/following-sibling::label")
 
     # Helper methods
+    def open(self, base_url):
+        url = f"{base_url}{self.path}"
+        self.driver.get(url)
+
     def click_checkbox_1(self):
         self.driver.find_element(*self.checkbox_1_locator).click()
 
@@ -28,4 +27,3 @@ class CheckBoxesPage(BasePage):
     
     def get_checkbox_2_status(self):
         return self.driver.find_element(*self.checkbox_2_locator).is_selected()
-    

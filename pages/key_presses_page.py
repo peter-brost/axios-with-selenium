@@ -1,12 +1,7 @@
-from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-
-class KeyPressesPage(BasePage):
-    # TODO - doc string here
-
+class KeyPressesPage:
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
         self.path = "key_presses"
 
@@ -15,9 +10,12 @@ class KeyPressesPage(BasePage):
     result_text_locator = (By.ID, "result")
 
     # Helper methods
+    def open(self, base_url):
+        url = f"{base_url}{self.path}"
+        self.driver.get(url)
+
     def enter_text(self, text):
         self.driver.find_element(*self.text_input_locator).send_keys(text)
 
     def get_result_text(self):
         return self.driver.find_element(*self.result_text_locator).text
-    
