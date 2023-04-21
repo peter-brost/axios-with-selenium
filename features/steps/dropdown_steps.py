@@ -1,5 +1,5 @@
 from behave import given, when, then
-from pages.dropdown_page import DropdownPage
+
 
 @given("the user is on the Dropdown page")
 def step_impl(context):
