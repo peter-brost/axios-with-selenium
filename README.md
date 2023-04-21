@@ -8,4 +8,4 @@
 - Install the project dependencies by running: `$pip install -r requirements.txt`
 
 ## Running The Tests
-- To run the tests, run the following command: `behave`
+- To run the tests, run the following command: `$behave`

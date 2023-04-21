@@ -6,13 +6,11 @@ def step_impl(context):
 
 @when("the user checks the first checkbox")
 def step_impl(context):
-    if not context.checkboxes_page.get_checkbox_1_status():
-        context.checkboxes_page.click_checkbox_1()
+    context.checkboxes_page.click_checkbox_1()
 
 @when("the user unchecks the second checkbox")
 def step_impl(context):
-    if context.checkboxes_page.get_checkbox_2_status():
-        context.checkboxes_page.click_checkbox_2()
+    context.checkboxes_page.click_checkbox_2()
 
 @then("the first checkbox should be checked")
 def step_impl(context):
