@@ -1,4 +1,4 @@
-Feature: Add/Remove Elements Page Test
+Feature: Add/Remove Elements Page Test on a desktop device
 
 
 Scenario: User adds and removes elements

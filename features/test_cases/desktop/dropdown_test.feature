@@ -1,4 +1,4 @@
-Feature: Dropdown Page Test
+Feature: Dropdown Page Test on a desktop device
 
 
 Scenario: User selects options from dropdown menu

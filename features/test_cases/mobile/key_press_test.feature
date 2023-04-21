@@ -1,4 +1,4 @@
-Feature: Key Presses Page Test
+Feature: Key Presses Page Test on a mobile device
 
 
 Scenario: User enters a random character

@@ -1,4 +1,4 @@
-Feature: Login to The Internet
+Feature: Login to The Internet on a mobile device
 
 
 Scenario: Authenticate using form authentication

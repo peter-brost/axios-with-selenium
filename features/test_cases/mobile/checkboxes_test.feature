@@ -1,4 +1,4 @@
-Feature: Checkboxes Page Test
+Feature: Checkboxes Page Test on a mobile device
 
 
 Scenario: User checks and unchecks checkboxes
