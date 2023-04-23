@@ -6,6 +6,7 @@ from pages.key_presses_page import KeyPressesPage
 from pages.checkboxes_page import CheckBoxesPage
 from pages.add_remove_elements_page import AddRemoveElementsPage
 
+
 def create_webdriver_instance(context, test_type):
     chrome_options = Options()
 
@@ -17,6 +18,7 @@ def create_webdriver_instance(context, test_type):
 
     driver = webdriver.Chrome(options=chrome_options)
     return driver
+
 
 def before_scenario(context, scenario):
     test_type = "desktop" if "desktop" in context.feature.filename else "mobile"
@@ -30,6 +32,7 @@ def before_scenario(context, scenario):
     context.add_remove_elements_page = AddRemoveElementsPage(context.driver)
 
     context.base_url = "https://the-internet.herokuapp.com/"
+
 
 def after_scenario(context, scenario):
     context.driver.quit()
